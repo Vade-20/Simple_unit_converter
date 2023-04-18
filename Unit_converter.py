@@ -47,8 +47,15 @@ def units_check(n):
     pass
 
 def convert(n=None):
+    from tkinter import messagebox
     u1 = unit_var1.get()
     u2 = unit_var2.get()
+    if e1.get()=='':
+        messagebox.showerror('Error', 'Please enter a value for unit conversion')
+        return None
+    elif u1=='' or u2=='':
+            messagebox.showerror('Error', 'Please select  a unit for conversion')
+            return None
     if system_var.get() != 'Temperature':
         u1 = unit.get(u1)
         u2 = unit.get(u2)
