@@ -118,4 +118,6 @@ b2.grid(row=4,column=2,sticky=W)
 
 root.bind('<Return>',convert)
 root.bind('<Delete>',delete)
+root.bind('<Escape>',lambda n:root.quit())
+
 mainloop()
