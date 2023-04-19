@@ -1,6 +1,12 @@
 from tkinter import *
-root = Tk()
 
+root = Tk()
+root.title("UNIT CONVERTER")
+
+try:
+    root.iconbitmap(r'Simple_unit_converter\rulers_scale_measure_icon.ico')
+except:
+    pass
 
 l1 = Label(root,text='Simple Unit Conversion',fg='blue',font=('Comic Sans MS', '40'),padx=50)
 l1.grid(row=0,column=0,columnspan=3,sticky=W+E)
@@ -74,6 +80,15 @@ def convert(n=None):
             ans = (u1-273.15) * 9/5 + 32
             e2.config(text=ans)
 
+def is_num(keys):
+    keys = keys.char
+    if str(keys).isalpha():
+        from tkinter import messagebox
+        messagebox.showerror('Error', 'Please select  a numerical value only')
+        e1.delete(0,END)
+        e2.config(text='')
+
+
 
 def delete(n=None):
     e1.delete(0,END)
@@ -119,5 +134,6 @@ b2.grid(row=4,column=2,sticky=W)
 root.bind('<Return>',convert)
 root.bind('<Delete>',delete)
 root.bind('<Escape>',lambda n:root.quit())
+root.bind('<Key>',is_num)
 
 mainloop()
