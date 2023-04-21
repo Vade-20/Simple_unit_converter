@@ -66,11 +66,18 @@ def convert(n=None):
         u1 = unit.get(u1)
         u2 = unit.get(u2)
         uni = u1/u2
-        ans = int(e1.get())*uni
+        ans = float(e1.get())*uni
+        ans_split = str(ans).split('.')
+        if len(ans_split[0])>1:
+            ans = round(ans,4)
         e2.config(text=ans)
     else:
-        u1 = unit.get(u1)
-        u1 = u1(int(e1.get()))
+        if u1!='kelvin':
+            u1 = unit.get(u1)
+            u1 = u1(float(e1.get()))
+        else:
+            u1 = unit.get(u1)
+            u1 = float(e1.get())*u1
         if u2=='kelvin':
             e2.config(text=u1)   
         elif u2=='celsius':
