@@ -2,7 +2,7 @@ from tkinter import *
 
 root = Tk()
 root.title("UNIT CONVERTER")
-
+root.resizable(height=False,width=False)
 try:
     root.iconbitmap(r'Simple_unit_converter\rulers_scale_measure_icon.ico')
 except:
