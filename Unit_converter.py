@@ -35,22 +35,17 @@ def check(var):
     unit_var1 = StringVar()
     unit_var2 = StringVar()
 
-    slide_2 = OptionMenu(root, unit_var1, *unit.keys(), command=units_check)
+    slide_2 = OptionMenu(root, unit_var1, *unit.keys())
     slide_2.config(fg='Blue',  font=('Times', '20'), relief='solid',width=20,
                     highlightbackground='grey', highlightthickness=2)
     slide_2.grid(row=2, column=1, sticky=W + E)
 
-    slide_3 = OptionMenu(root, unit_var2, *unit.keys(), command=units_check)
+    slide_3 = OptionMenu(root, unit_var2, *unit.keys())
     slide_3.config(fg='Blue',  font=('Times', '20'), relief='solid',width=20,
                     highlightbackground='grey', highlightthickness=2)
     slide_3.grid(row=2, column=2, sticky=W + E)
     e1.delete(0,END)
     e2.config(text='')
-
-
-    
-def units_check(n):
-    pass
 
 def convert(n=None):
     from tkinter import messagebox
@@ -114,12 +109,12 @@ slide_1.grid(row=1, column=1, sticky=W + E, columnspan=2)
 unit_var1 = StringVar()
 unit_var2 = StringVar()
 unit ={"meter": 1.0,"kilometer": 1000.0,"centimeter": 0.01,"millimeter": 0.001,"micrometer": 1e-6,"nanometer": 1e-9,"angstrom": 1e-10,"inch": 0.0254,"foot": 0.3048,"yard": 0.9144,"mile": 1609.34}
-slide_2 = OptionMenu(root, unit_var1,*unit.keys(), command=units_check)
+slide_2 = OptionMenu(root, unit_var1,*unit.keys())
 slide_2.config(fg='Blue',  font=('Times', '20'), relief='solid',width=20,
                 highlightbackground='grey', highlightthickness=2)
 slide_2.grid(row=2, column=1, sticky=W + E)
 
-slide_3 = OptionMenu(root, unit_var2, *unit.keys(), command=units_check)
+slide_3 = OptionMenu(root, unit_var2, *unit.keys())
 slide_3.config(fg='Blue',  font=('Times', '20'), relief='solid',width=20,
                 highlightbackground='grey', highlightthickness=2)
 slide_3.grid(row=2, column=2, sticky=W + E)
